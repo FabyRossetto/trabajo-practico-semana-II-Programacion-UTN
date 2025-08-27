@@ -56,13 +56,22 @@ public class TrabajoPractico2 {
 //        actualizarStock(stockActual, cantidadVendida, cantidadRecibida);
 
          //ejercicio 11
-          System.out.println("Ingrese el precio del producto");
-          double precio= scan.nextDouble();
-          
-          calcularDescuentoEspecial(precio);
+//          System.out.println("Ingrese el precio del producto");
+//          double precio= scan.nextDouble();
+//          
+//          calcularDescuentoEspecial(precio);
           
           //ejercicio 12
+          //mostrarArray();
           
+          //ejercicio 13
+          double[] precios = {5.6,8.7,6,3.2,4,9};
+          System.out.println("Precios originales:");
+          imprimirOriginales(precios, 0);
+          precios[2] = 7.10;
+          System.out.println("\nPrecios modificados:");
+          imprimirModificados(precios, 0);
+    
 
 
         
@@ -301,5 +310,40 @@ public class TrabajoPractico2 {
 //b. Muestre los valores originales de los precios. 
 //c. Modifique el precio de un producto específico. 
 //d. Muestre los valores modificados.
-    
+    public static void mostrarArray(){
+    double [] precios= {2.00,6.5,8.9,5};
+    System.out.println("Precios originales:");
+    for (double valor : precios){
+            System.out.println("Precio: $" + valor);
+    }
+    precios[3]=9.5;
+    System.out.println("Precios modificados:");
+    for (double valor : precios){
+            System.out.println("Precio: $" + valor);
+    }
+    }
+
+    //13)Crea un programa que: 
+//a. Declare e inicialice un array con los precios de algunos productos. 
+//b. Use una función recursiva para mostrar los precios originales. 
+//c. Modifique el precio de un producto específico. 
+//d. Use otra función recursiva para mostrar los valores modificados.
+
+    public static void imprimirOriginales(double[] array, int indice) {
+        if (indice >= array.length) {
+            return; // caso base
+        }
+        System.out.println("Precio: $" + array[indice]);
+        imprimirOriginales(array, indice + 1); 
 }
+
+    
+    public static void imprimirModificados(double[] array, int indice) {
+        if (indice >= array.length) {
+            return; // caso base
+        }
+        System.out.println("Precio: $" + array[indice]);
+        imprimirModificados(array, indice + 1); 
+}
+}
+
